@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TodoList</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Strings for the All Todo List Activity (ALT) -->
+    <string name="alt_item_notifications">Notify</string>
+    <string name="alt_item_name">Item</string>
+    <string name="alt_item_descr">Description</string>
+    <string name="title_activity_display_items">DisplayItems</string>
+    <string name="title_activity_check_list">CheckList</string>
+    <string name="title_activity_timed_list">TimedList</string>
+
+    <!-- Strings for the Check List Show -->
+    <string name="cli_quantity">#</string>
+    <string name="cli_unit">Unit</string>
+    <string name="cli_name">Name</string>
+    <string name="cli_descr">Description</string>
+
+</resources>
