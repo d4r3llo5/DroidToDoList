@@ -39,7 +39,18 @@ public class TDLTextView extends TextView
 		this.setId(id);
 		this.setGravity(gravity);
 		this.setTextColor(color);
+		this.setSingleLine(false);
 		this.setWeight(weight);
+		this.setFontSize(14);
+	}
+
+	/**
+	 * set text font size
+	 * @param f_size (float): font size to set it to
+	 */
+	public void setFontSize(float f_size)
+	{
+		this.setTextSize(f_size);
 	}
 
 	/*

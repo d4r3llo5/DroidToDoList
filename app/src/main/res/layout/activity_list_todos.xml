@@ -6,28 +6,41 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".ListTodos"
+    android:background="@color/page_blue">
 
-    android:background="@color/stickynoteyellow">
-
+    <TextView
+        android:id="@+id/alt_all_lists"
+        android:layout_width="match_parent"
+        android:layout_weight="10"
+        android:layout_height="wrap_content"
+        android:text="@string/alt_all_lists"
+        android:textSize="18sp"
+        android:textColor="@color/pen_red"
+        android:gravity="center"/>
     <TableLayout
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:stretchColumns="0, 1, 2"
-        android:id="@+id/alt_all_todo_lists">
-        <TableRow>
+        android:id="@+id/alt_table_header"
+        android:layout_below="@id/alt_all_lists"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingLeft="15dp" android:paddingRight="15dp"
+        android:paddingTop="10dp">
+        <TableRow
+            android:layout_width="match_parent" android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/alt_item_chk"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:text="@string/alt_item_notifications"
-                android:textColor="@color/penred"/>
+                android:textSize="16sp"
+                android:textColor="@color/pen_red"/>
             <TextView
                 android:id="@+id/alt_item_description"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:text="@string/alt_item_name"
-                android:textColor="@color/penred"
+                android:textSize="16sp"
+                android:textColor="@color/pen_red"
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/alt_item_descr"
@@ -35,8 +48,29 @@
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:text="@string/alt_item_descr"
-                android:textColor="@color/penred"
+                android:textSize="16sp"
+                android:textColor="@color/pen_red"
                 android:gravity="center"/>
         </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:background="@color/line_magenta">
+            <View
+                android:layout_height="2dp"
+                android:layout_weight="0"/>
+        </TableRow>
     </TableLayout>
+    <ScrollView
+        android:id="@+id/alt_list_tables"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_below="@id/alt_table_header">
+        <TableLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingLeft="15dp" android:paddingRight="15dp"
+            android:paddingBottom="10dp"
+            android:stretchColumns="0, 1, 2"
+            android:id="@+id/alt_all_todo_lists"
+            android:background="@color/page_blue">
+        </TableLayout>
+    </ScrollView>
 </RelativeLayout>

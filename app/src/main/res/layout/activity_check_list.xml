@@ -7,27 +7,52 @@
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 tools:context=".ListTodos"
 
-                android:background="@color/stickynoteyellow">
+                android:background="@color/page_yellow">
 
     <TableLayout
         android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:stretchColumns="0, 1, 2, 3"
-        android:id="@+id/alt_all_todo_lists">
-        <TableRow>
+        android:id="@+id/cli_list_header">
+        <TableRow
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+            <TextView
+                android:id="@+id/cli_list_name"
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:layout_height="wrap_content"
+                android:text="@string/cli_list_name"
+                android:textSize="18sp"
+                android:textColor="@color/pen_red"
+                android:gravity="center"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:background="@color/line_magenta">
+            <View
+                android:layout_height="2dp"
+                android:layout_weight="0"/>
+        </TableRow>
+        <TableRow
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
             <TextView
                 android:id="@+id/cli_quantity"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/cli_quantity"
-                android:textColor="@color/penred"/>
+                android:textSize="16sp"
+                android:textColor="@color/pen_red"
+                android:gravity="center"/>
             <TextView
                 android:id="@+id/cli_unit"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/cli_unit"
-                android:textColor="@color/penred"
+                android:textSize="16sp"
+                android:textColor="@color/pen_red"
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/cli_name"
@@ -35,7 +60,8 @@
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:text="@string/cli_name"
-                android:textColor="@color/penred"
+                android:textSize="16sp"
+                android:textColor="@color/pen_red"
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/cli_descr"
@@ -43,8 +69,20 @@
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:text="@string/cli_descr"
-                android:textColor="@color/penred"
+                android:textSize="16sp"
+                android:textColor="@color/pen_red"
                 android:gravity="center"/>
         </TableRow>
     </TableLayout>
+    <ScrollView
+        android:layout_below="@id/cli_list_header"
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TableLayout
+            android:id="@+id/alt_all_todo_lists"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:paddingLeft="15dp" android:paddingRight="15dp"
+            android:paddingBottom="10dp"
+            android:stretchColumns="0, 1, 2, 3">
+        </TableLayout>
+    </ScrollView>
 </RelativeLayout>

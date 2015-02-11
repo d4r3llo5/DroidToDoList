@@ -1,6 +1,7 @@
 package com.example.d4r3llo5.todolist;
 
 import android.content.Context;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TableRow;
@@ -47,6 +48,11 @@ public class CTDLTableRow extends TableRow
 	public CTDLTableRow(Context context, int id, View.OnClickListener listener)
 	{
 		super(context);
+		int height_padding;
+		int width_padding;
+
+		height_padding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, getResources().getDisplayMetrics());
+		width_padding = 0;//(int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, getResources().getDisplayMetrics());
 
 		// Set the layout stats
 		TableRow.LayoutParams layout = new TableRow.LayoutParams();
@@ -55,6 +61,7 @@ public class CTDLTableRow extends TableRow
 		setLayoutParams(layout);
 
 		this.setId(id);
+		this.setPadding(width_padding, height_padding, width_padding, height_padding);
 
 		// Set up the SubViews
 		initSubViews(context, id);
@@ -70,10 +77,11 @@ public class CTDLTableRow extends TableRow
 	 * setItemQuantity
 	 *  @param quantity (int): Number to buy
 	 */
-	public void setItemUnit(int quantity)
+	public void setItemQuantity(int quantity)
 	{
+		String number = String.valueOf(quantity);
 		if (listQuantity!= null) {
-			listQuantity.setText(quantity);
+			listQuantity.setText(number);
 		}
 	}
 	/**
@@ -116,10 +124,10 @@ public class CTDLTableRow extends TableRow
 	 */
 	private void initSubViews(Context context, int id)
 	{
-		listQuantity = new TDLTextView(context, id + 1, 1.0f, Gravity.CENTER, R.color.penpink );
-		listUnit = new TDLTextView(context, id + 2, 1.0f, Gravity.CENTER, R.color.penpink );
-		listName = new TDLTextView(context, id + 3, 3.0f, Gravity.CENTER, R.color.penpink );
-		listDescr = new TDLTextView(context, id + 4, 5.0f, Gravity.CENTER, R.color.penpink );
+		listQuantity = new TDLTextView(context, id + 1, 1.0f, Gravity.CENTER, R.color.pen_pink );
+		listUnit = new TDLTextView(context, id + 2, 1.0f, Gravity.CENTER, R.color.pen_pink );
+		listName = new TDLTextView(context, id + 3, 3.0f, Gravity.CENTER, R.color.pen_pink );
+		listDescr = new TDLTextView(context, id + 4, 5.0f, Gravity.CENTER, R.color.pen_pink );
 	}
 
 	/*

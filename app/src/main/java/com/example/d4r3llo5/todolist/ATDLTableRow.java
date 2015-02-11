@@ -1,6 +1,7 @@
 package com.example.d4r3llo5.todolist;
 
 import android.content.Context;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TableRow;
@@ -19,6 +20,7 @@ public class ATDLTableRow extends TableRow
 	private TDLTextView listName;
 	private TDLTextView listDescr;
 	private TDLCheckBox listTimed;
+	private int db_id;
 
 	/*-- Start of Constructors --*/
 	/**
@@ -41,11 +43,17 @@ public class ATDLTableRow extends TableRow
 	 *  Does not set View id or OnClickListener
 	 *  @param context (Context): ?? yeah
 	 *  @param id (int): the id value to use for this view object
+	 *  @param db (int): Id of the item in the Lists database
 	 *  @param listener (OnClickListener): Where do we find the on-click listener
 	 */
-	public ATDLTableRow(Context context, int id, View.OnClickListener listener)
+	public ATDLTableRow(Context context, int id, int db, View.OnClickListener listener)
 	{
 		super(context);
+		int height_padding;
+		int width_padding;
+
+		height_padding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, getResources().getDisplayMetrics());
+		width_padding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, getResources().getDisplayMetrics());
 
 		// Set the layout stats
 		TableRow.LayoutParams layout = new TableRow.LayoutParams();
@@ -54,6 +62,9 @@ public class ATDLTableRow extends TableRow
 		setLayoutParams(layout);
 
 		this.setId(id);
+		db_id = db;
+
+		this.setPadding(width_padding, height_padding, width_padding, height_padding);
 
 		// Set up the SubViews
 		initSubViews(context, id);
@@ -88,6 +99,14 @@ public class ATDLTableRow extends TableRow
 	}
 
 	/**
+	 *
+	 */
+	public int getDatabaseId()
+	{
+		return db_id;
+	}
+
+	/**
 	 * Initialize the SubItems
 	 *  @param context (Context): Sure
 	 *  @param id (int): The id of this object, it's children will inherit an id close to it
@@ -95,8 +114,8 @@ public class ATDLTableRow extends TableRow
 	private void initSubViews(Context context, int id)
 	{
 		listTimed = new TDLCheckBox(context, id + 1, 2.0f, Gravity.CENTER_HORIZONTAL);
-		listName = new TDLTextView(context, id + 2, 3.0f, Gravity.CENTER, R.color.penpink );
-		listDescr = new TDLTextView(context, id + 3, 5.0f, Gravity.CENTER, R.color.penpink );
+		listName = new TDLTextView(context, id + 2, 3.0f, Gravity.CENTER, R.color.pen_pink );
+		listDescr = new TDLTextView(context, id + 3, 5.0f, Gravity.CENTER, R.color.pen_pink );
 	}
 
 	/*

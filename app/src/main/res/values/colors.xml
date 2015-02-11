@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="stickynoteyellow">#FFFF99</color>
-    <color name="penred">#FF3333</color>
-    <color name="penpink">#FF3399</color>
+    <color name="page_yellow">#FFFF99</color>
+    <color name="page_black">#5C5C5C</color>
+    <color name="page_blue">#AAEDFF</color>
+
+    <color name="pen_yellow">#FFFF99</color>
+    <color name="pen_red">#FF3333</color>
+    <color name="pen_pink">#FF3399</color>
+
+    <color name="line_magenta">#FF00FF</color>
 </resources>
