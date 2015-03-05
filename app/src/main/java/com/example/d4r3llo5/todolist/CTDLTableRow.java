@@ -144,5 +144,6 @@ public class CTDLTableRow extends TableRow
 		if ( listDescr != null )
 			this.addView(listDescr);
 	}
+
 }
 
